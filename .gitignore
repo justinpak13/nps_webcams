@@ -132,4 +132,4 @@ dmypy.json
 api_key.txt
 
 # any jpg that is generated with the code 
-*.jpg
+images/*.jpg
