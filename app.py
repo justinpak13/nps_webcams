@@ -1,4 +1,9 @@
 import random 
+import requests
+from image import convert_image
+
+with open('api_key.txt', 'r') as f:
+    key = f.read()
 
 parks = ["ABLI",
     "ACAD",
@@ -425,4 +430,14 @@ parks = ["ABLI",
     "YUCH",
     "ZION"]
 
-print(random.choice(parks))
+r = requests.get(f"https://developer.nps.gov/api/v1/parks?parkCode={random.choice(parks)}&api_key={key}")
+
+park_name = (r.json()['data'][0]["fullName"])
+image = random.choice(r.json()['data'][0]["images"])
+
+i = requests.get(image['url'])
+
+with open('images/image.jpg','wb') as f:
+    f.write(i.content)
+
+convert_image(f"{park_name} \n {image['title']}")

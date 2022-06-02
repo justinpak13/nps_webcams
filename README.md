@@ -1,2 +1,2 @@
 # nps_webcams
-saves down a screenshot of a live webcam from a random national park 
+saves down an image from the National Park Service API and displays on an inky for a raspberry pi
