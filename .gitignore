@@ -130,3 +130,6 @@ dmypy.json
 
 # file containing api key 
 api_key.txt
+
+# any jpg that is generated with the code 
+*.jpg
